@@ -1,0 +1,29 @@
+h2 {
+  margin: 0px 0px 0px 32px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.movies {
+  overflow-x: hidden;
+  margin-left: -0px;
+}
+
+.movie_img {
+  width: 999999999px;
+}
+
+.movies_thumb {
+  display: flex;
+  margin: 0px 0px 0px 32px;
+}
+
+.movies_thumb img {
+  transform: scale(0.9);
+  transition: all .3s ease;
+}
+
+.movies_thumb img:hover {
+  transform: scale(1);
+}
+

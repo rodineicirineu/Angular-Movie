@@ -1,0 +1,155 @@
+.header {
+  width: 99.1vw;
+  height: 78vh;
+  overflow: hidden;
+  object-fit: cover;
+  display: flex;
+}
+
+.featured--vertical {
+  width: inherit;
+  height: inherit;
+  background: linear-gradient(to top, #111 10%, transparent 90%);
+  position: absolute;
+}
+
+.featured--horizontal {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #111 30%, transparent 70%);
+  position: absolute;
+}
+
+.header__banner {
+  width: 100%;
+  position: relative;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.sticky {
+  background-color: #0d0d0d;
+  z-index: 100;
+}
+
+.info {
+  display: block;
+  color: white;
+  text-align: left;
+  z-index: 5;
+  margin-left: 32px;
+  width: 500px;
+}
+
+.info-btns {
+  display: flex;
+}
+
+.info p {
+  padding: 20px 0px;
+  font-size: 20px;
+  color: #999;
+}
+
+.title h2 {
+  display: flex;
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 28px;
+  line-height: 50px;
+}
+
+.title span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.title span:last-child {
+  padding-left: 30px;
+}
+
+.title .points {
+  padding-right: 2px;
+  color: #46d639;
+}
+
+.watchButton,
+.listButton {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 25px;
+  border-radius: 5px;
+  margin-right: 10px;
+  opacity: 1;
+  transition: all ease 0.2s;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.watchButton:hover,
+.listButton:hover {
+  opacity: 0.7;
+}
+
+.watchButton {
+  background: #fff;
+  color: #000;
+}
+
+.listButton {
+  background: #333;
+  color: #fff;
+}
+
+.header__main {
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  justify-content: space-between;
+  z-index: 10005;
+  position: fixed;
+  top: 0;
+  transition: all 0.3s;
+  transition-timing-function: ease-in;
+}
+
+.header__left a img {
+  width: 85px;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .featured--vertical { 
+    height: 70vh;
+  }
+  .header {
+    height: 70vh;
+  }
+
+  .info {
+    width: 300px;
+  }
+
+  .info span {
+    font-size: 16px;
+  }
+
+  .info p {
+    font-size: 14px;
+  }
+
+  .title h2 {
+    font-size: 40px;
+  }
+
+  .watchButton,
+  .listButton {
+    font-size: 16px;
+  }
+}
