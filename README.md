@@ -1,27 +1,18 @@
-# AngularMovie
+# Angular Movie
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
+![Netflix](https://user-images.githubusercontent.com/81439723/121600797-6e656a80-ca1b-11eb-8cc2-f006e6382132.PNG)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Como rodar o projeto:
 
-## Build
+**Você pode clonar o projeto e rodá-lo localmente seguindo os passos abaixo**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. git clone `https://github.com/rodineicirineu/Angular-Movie.git` para clonar o projeto
 
-## Running unit tests
+2. `npm install` para instalar as dependências do projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. `ng serve -o` para executar o projeto
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. Acessar `http://localhost:4200/` no navegador
