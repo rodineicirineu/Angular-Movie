@@ -7,18 +7,22 @@ import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { HeaderComponent } from './components/header/header.component';
-
-
+import { OverviewComponent } from './components/overview/overview.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    HeaderComponent
+    HeaderComponent,
+    OverviewComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,9 @@ import { HeaderComponent } from './components/header/header.component';
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatIconModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

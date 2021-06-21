@@ -10,8 +10,8 @@ import { Movies } from 'src/app/models/model-api';
 export class ListComponent implements OnInit  {
   @Input() movies!: Movies;
   @Input() title!: string;
-  width = 8;
   height = 300;
+  width = 8;
 
   constructor() { }
 

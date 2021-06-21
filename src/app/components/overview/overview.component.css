@@ -1,5 +1,9 @@
+.container {
+  height: 100%;
+}
+
 .header {
-  height: 78vh;
+  height: 100%;
   overflow: hidden;
   object-fit: cover;
   display: flex;
@@ -17,7 +21,7 @@
   height: inherit;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to right, #111 30%, transparent 70%);
+  background: linear-gradient(to right, #111 18%, transparent 80%);
   position: absolute;
 }
 
@@ -99,11 +103,6 @@
 .watchButton {
   background: #fff;
   color: #000;
-
-}
-.watchButton a {
-  text-decoration: none;
-  color: #000;
 }
 
 .listButton {
@@ -129,8 +128,27 @@
   cursor: pointer;
 }
 
+h2,
+a {
+  color: white;
+}
+
+.iframe {
+  position: absolute;
+  color: white;
+  bottom: 0;
+  right: 0;
+}
+
+.iframe p {
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
 @media (max-width: 760px) {
-  .featured--vertical { 
+  .featured--vertical {
     height: 70vh;
   }
   .header {
@@ -138,6 +156,8 @@
   }
 
   .info {
+    margin-left: 20px;
+    padding-top: 80px;
     width: 300px;
   }
 
@@ -156,5 +176,20 @@
   .watchButton,
   .listButton {
     font-size: 16px;
+  }
+
+  .iframe {
+    top: 69%;
+    right: 10%;
+  }
+
+  .iframe p {
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+  iframe {
+    width: 300px;
+    height: 200px;
   }
 }

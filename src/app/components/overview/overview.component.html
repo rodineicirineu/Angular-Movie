@@ -4,26 +4,24 @@
       class="header__banner"
       [ngStyle]="{
         'background-size': 'cover',
+        height: '100%',
         'background-position': 'top center',
         'background-image': 'url(' + headerBGUrl + ')'
-      }">
+      }"
+    >
       <div class="featured--horizontal">
         <div class="featured--vertical"></div>
       </div>
       <div class="info">
         <div class="title">
-          <h2>{{ this.series.results[this.randomNumber].name }}</h2>
+          <h2>{{ movie.title }}</h2>
           <span class="points">Nota: </span>
-          <span class="points">{{
-            this.series.results[this.randomNumber].vote_average }}</span>
-          <span>{{
-            this.series.results[this.randomNumber].first_air_date | date: "yyyy"
-          }}</span>
+          <span class="points">{{ movie.vote_average }}</span>
+          <span>{{ movie.release_date | date: "yyyy" }}</span>
         </div>
-        <p>{{ this.overview }}</p>
+        <p>{{ overview }}</p>
         <div class="info-btns">
-          <a href="{{ this.key }}">
-          <button class="watchButton">► Assistir</button></a>
+          <button class="watchButton">► Assistir</button>
           <button class="listButton">+ Minha Lista</button>
         </div>
       </div>
@@ -50,6 +48,23 @@
     </div>
   </div>
 </div>
+
+<div class="iframe" *ngIf="videoUrl; else loading">
+  <p>Trailer {{ movie.title }}</p>
+  <iframe
+    width="620"
+    height="315"
+    [src]="videoUrl"
+    controls="0"
+    title="YouTube video player"
+    frameborder="0"
+    allowfullscreen
+  >
+  </iframe>
+</div>
+
+<app-list title="Similar" [movies]="similar" style="color: white"></app-list>
+
 <ng-template #loading>
   <mat-spinner [color]="color" style="margin: 80px auto"></mat-spinner>
 </ng-template>
