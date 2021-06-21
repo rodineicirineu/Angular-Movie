@@ -4,7 +4,6 @@
 
 .header {
   height: 100%;
-  overflow: hidden;
   object-fit: cover;
   display: flex;
 }
@@ -148,6 +147,9 @@ a {
 }
 
 @media (max-width: 760px) {
+  .container {
+    height: auto;
+  }
   .featured--vertical {
     height: 70vh;
   }
@@ -179,8 +181,11 @@ a {
   }
 
   .iframe {
-    top: 69%;
-    right: 10%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 24px;
   }
 
   .iframe p {
@@ -189,6 +194,7 @@ a {
   }
 
   iframe {
+    margin: 0 auto;
     width: 300px;
     height: 200px;
   }

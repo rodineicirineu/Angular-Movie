@@ -11,7 +11,9 @@ const routes: Routes = [
   {path: ":id/:id", component: OverviewComponent},
   {path: ":id/:id/:id", component: OverviewComponent},
   {path: ":id/:id/:id/:id", component: OverviewComponent},
+  {path: ":id/:id/:id/:id/:id", component: OverviewComponent},
   {path: "**", redirectTo:"home"}
+  
 ];
 
 @NgModule({
