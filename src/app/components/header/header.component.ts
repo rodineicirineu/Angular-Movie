@@ -66,6 +66,6 @@ export class HeaderComponent implements OnInit {
         this.name = this.video.results[0].name
         this.key = 'https://www.youtube.com/watch?v=' + this.video.results[0].key
       });
-    },10)
+    },800)
   }
 }
