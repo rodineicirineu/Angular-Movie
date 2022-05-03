@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 @Component({
   selector: 'app-root',

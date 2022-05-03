@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
-import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SwiperModule } from "swiper/angular";
+
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
@@ -31,9 +35,9 @@ import { HomeComponent } from './components/home/home.component';
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatIconModule,
-    IvyCarouselModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

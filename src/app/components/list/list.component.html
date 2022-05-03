@@ -1,22 +1,12 @@
 <section>
-<ng-container *ngIf="title">
-  <h2>{{ title }}</h2>
-</ng-container>
-  <div class="movies">
-    <div class="movies_img">
-      <div class="movies_thumb">
-        <ng-container *ngIf="movies && movies.results.length > 0">
-          <carousel [height]="height" [cellsToScroll]="2" [cellsToShow]="width">
-            <div class="img carousel-cell" *ngFor="let m of movies.results">
-              <img
-                routerLink="{{ m.id }}"
-                src="https://image.tmdb.org/t/p/w200{{ m?.poster_path }}"
-                alt="{{ m.title }}"
-              />
-            </div>
-          </carousel>
-        </ng-container>
-      </div>
-    </div>
+  <ng-container *ngIf="title">
+    <h2>{{ title }}</h2>
+  </ng-container>
+  <div class="movies_thumb">
+    <swiper [config]="config" *ngIf="movies && movies.results && movies.results!.length > 0">
+      <ng-template swiperSlide *ngFor="let m of movies.results">
+        <img routerLink="/{{ m.id }}" src="https://image.tmdb.org/t/p/w200{{ m?.poster_path }}" alt="{{ m.title }}" />
+      </ng-template>
+    </swiper>
   </div>
 </section>

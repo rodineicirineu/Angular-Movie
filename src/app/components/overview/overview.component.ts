@@ -23,8 +23,6 @@ export class OverviewComponent implements OnInit {
   movie: any;
   video: any;
   id: any;
-  height = 300;
-  width = 8;
 
   constructor(
     private tmdb: tmdbService,
@@ -32,29 +30,29 @@ export class OverviewComponent implements OnInit {
     private sanitazer: DomSanitizer){}
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
-    this.tmdb.getMovie(this.id).subscribe(res => {
-      this.movie = res;
-      this.headerBGUrl = 'https://image.tmdb.org/t/p/original' + this.movie.backdrop_path;
-      let description = this.movie.overview;
-      if (description.length > 300) {
-        description = description.substring(0, 300)+'...';
-      };
-      this.overview = description
-    })
+    this.route.params.subscribe(params => {
+      this.similar = {} as Movies;
+      this.tmdb.getMovie(params.id).subscribe(res => {
+        this.movie = res;
+        this.headerBGUrl = 'https://image.tmdb.org/t/p/original' + this.movie.backdrop_path;
+        let description = this.movie.overview;
+        if (description.length > 300) {
+          description = description.substring(0, 300)+'...';
+        };
+        this.overview = description
+      })
 
-    this.tmdb.getMovieVideo(this.id).subscribe(data => {
-      this.video = data;
-      this.name = this.video.results[0].name
-      this.key = this.video.results[0].key
-      this.videoUrl = this.sanitazer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.key + '?showinfo=0&rel=0');
-    })
+      this.tmdb.getMovieVideo(params.id).subscribe(data => {
+        this.video = data;
+        this.name = this.video.results[0].name
+        this.key = this.video.results[0].key
+        this.videoUrl = this.sanitazer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.key + '?showinfo=0&rel=0');
+      })
 
-    this.tmdb.getSimilar(this.id).subscribe(res => this.similar  = res);
-  
-    this.heightinner();
-    this.widthinner();
-    this.scrollTop();
+      this.tmdb.getSimilar(params.id).subscribe(res => this.similar  = res);
+      this.scrollTop();
+
+    })
   }
 
 
@@ -66,21 +64,9 @@ export class OverviewComponent implements OnInit {
     } else {
       this.sticky = false;
     }
-  } 
+  }
 
   scrollTop() {
     window.scrollTo({top: 0});
-  }
-
-  heightinner() {
-    if (window.innerWidth < 900) {
-      this.width = 3
-    }
-  }
-
-  widthinner() {
-    if (window.innerWidth < 900) {
-      this.height = 200
-    }
   }
 }
