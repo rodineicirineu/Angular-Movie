@@ -11,9 +11,9 @@ const enum endpoint {
   adventure = '/movie/74/recommendations',
   upComing = '/movie/upcoming',
   fantasy = '/movie/22/recommendations',
-  family = '/movie/35/recommendations', 
+  family = '/movie/35/recommendations',
 
-  series = '/tv/popular',
+  series = '/tv/top_rated',
   serieID = '/tv/',
   movieID = '/movie/'
 }
@@ -26,18 +26,18 @@ const params = new HttpParams()
 })
 
 export class tmdbService implements OnInit  {
-  private url = 'https://api.themoviedb.org/3'; 
-  
+  private url = 'https://api.themoviedb.org/3';
+
   constructor(private http: HttpClient) { }
-  
+
   getNowPlayingMovie(): Observable<Movies> {
     return this.http.get<Movies>(`${this.url}${endpoint.now_playing}`, { params })
   }
-  
+
   getAnimation(): Observable<Movies> {
     return this.http.get<Movies>(`${this.url}${endpoint.animation}`, { params } )
   }
-  
+
   getAdventure(): Observable<Movies> {
     return this.http.get<Movies>(`${this.url}${endpoint.adventure}`, { params })
   }
@@ -45,11 +45,11 @@ export class tmdbService implements OnInit  {
   getUpComing(): Observable<Movies> {
     return this.http.get<Movies>(`${this.url}${endpoint.upComing}`, { params })
   }
-  
+
   getFantasy(): Observable<Movies> {
     return this.http.get<Movies>(`${this.url}${endpoint.fantasy}`, { params })
   }
-  
+
   getFamily(): Observable<Movies> {
     return this.http.get<Movies>(`${this.url}${endpoint.family}`, { params })
   }

@@ -36,16 +36,16 @@ export class OverviewComponent implements OnInit {
         this.movie = res;
         this.headerBGUrl = 'https://image.tmdb.org/t/p/original' + this.movie.backdrop_path;
         let description = this.movie.overview;
-        if (description.length > 300) {
-          description = description.substring(0, 300)+'...';
+        if (description.length > 200) {
+          description = description.substring(0, 200)+'...';
         };
         this.overview = description
       })
 
       this.tmdb.getMovieVideo(params.id).subscribe(data => {
         this.video = data;
-        this.name = this.video.results[0].name
-        this.key = this.video.results[0].key
+        this.name = this.video?.results[0]?.name
+        this.key = this.video?.results[0]?.key
         this.videoUrl = this.sanitazer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.key + '?showinfo=0&rel=0');
       })
 

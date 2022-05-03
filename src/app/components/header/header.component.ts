@@ -63,8 +63,8 @@ export class HeaderComponent implements OnInit {
     setTimeout(() => {
       this.tmdb.getSeriesVideo(this.id).subscribe(res => {
         this.video = res
-        this.name = this.video.results[0].name
-        this.key = 'https://www.youtube.com/watch?v=' + this.video.results[0].key
+        this.name = this.video?.results[0]?.name
+        this.key = 'https://www.youtube.com/watch?v=' + this.video?.results[0]?.key
       });
     },800)
   }
